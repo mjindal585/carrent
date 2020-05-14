@@ -1,0 +1,18 @@
+<table style="width:100%">
+  <tr>
+    <th>Model:</th>
+    <th>Vehicle Number:</th>
+    <th>Price (/km):</th>
+    <th>Date of Rent:</th> 
+    <th>Date Of Return:</th>
+  </tr>
+  {{#each info}}
+    <tr>
+        <td>{{this.car.model}}</td>
+        <td>{{this.car.vnum}}</td>
+        <td>{{this.car.price}}</td>
+        <td>{{this.dateissue}}</td> 
+        <td>{{this.datereturn}}</td>
+    </tr>
+  {{/each}}
+</table>

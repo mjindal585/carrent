@@ -1,0 +1,63 @@
+<h1>Search Result</h1>
+
+<form action="/searchingModel" method="GET">
+  <fieldset>
+    <legend>Search....</legend>
+
+    <label for="name">Model:</label>
+    <input type="text" name="model">
+    <input type="submit"><br>
+</fieldset>
+
+
+</form>
+    {{#if currentUser.isAdmin}}
+    {{#each searchedCars}}
+        <h3>Model:</h3>
+        <p>{{this.newModel}}</p>
+
+        <h3>Vehicle Number:</h3>
+        <p>{{this.vnum}}</p>
+
+        <h3>Seats:</h3>
+        <p>{{this.seats}}</p>
+
+        
+        
+        <h3>Price (/km):</h3>
+        <p>{{this.price}}</p>
+
+        <h3>Year:</h3>
+        <p>{{this.year}}</p>
+        
+        <h3></h3><p><a href="/delcar/{{this._id}}"><b>Delete</b></a></p>
+
+        ____________________________________________________________________
+        <br>
+
+    {{/each}}
+
+  {{else}}
+  {{#each searchedCars}}
+        <h3>Model:</h3>
+        <p>{{this.newModel}}</p>
+
+        <h3>Vehicle Number:</h3>
+        <p>{{this.vnum}}</p>
+
+        <h3>Seats:</h3>
+        <p>{{this.seats}}</p>        
+        
+        <h3>Price (/km):</h3>
+        <p>{{this.price}}</p>
+
+        <h3>Year:</h3>
+        <p>{{this.year}}</p>
+        
+        <a href="/carDetails/{{this._id}}"><b>Rent Now</b></a><br>
+        ____________________________________________________________________
+        <br>
+
+    {{/each}}
+    {{/if}}
+

@@ -1,0 +1,80 @@
+
+
+<h2 class="home-title">Pick, Rent, Drive....</h2>
+
+
+<form action="/searchingModel" method="GET" class="form-inline my-2 my-lg-0">
+  <fieldset>
+    <legend>Search....</legend>
+    <input type="text" name="model" class="form-control mr-sm-2" placeholder="Model..." aria-label="Search">
+    <input type="submit" class="btn btn-outline-success my-2 my-sm-0"><br>
+</fieldset>
+</form>
+
+<br><br>
+
+{{#if currentUser}}
+{{else}}
+Please <a href="/login">Login</a> to continue....
+{{/if}}
+
+
+{{#if currentUser.isAdmin}}
+    {{#each allCar}}
+    <div class="car-section row">        
+        <div class="col-md-2 col-sm12">
+            <h5>Model:</h5>
+            <p>{{this.model}}</p>
+        </div>
+        <div class="col-md-2 col-sm12">
+            <h5>Vehicle Number:</h5>
+            <p>{{this.vnum}}</p>
+        </div>
+        <div class="col-md-2 col-sm12">
+            <h5>Seats:</h5>
+            <p>{{this.seats}}</p>
+        </div>
+        <div class="col-md-2 col-sm12">
+            <h5>Price (/km):</h5>
+            <p>{{this.price}}</p>
+        </div>
+        <div class="col-md-2 col-sm12">
+            <h5>Year:</h5>
+            <p>{{this.year}}</p>
+        </div>
+        <div class="col-md-2 col-12">
+            <a href="/delcar/{{this._id}}"><b>Delete</b></a>
+        </div>        
+    </div>
+    {{/each}}
+{{else}}            
+    {{#each allCar}}
+    <div class="car-section row">        
+        <div class="col-md-2 col-sm12">
+            <h5>Model:</h5>
+            <p>{{this.model}}</p>
+        </div>
+        <div class="col-md-2 col-sm12">
+            <h5>Vehicle Number:</h5>
+            <p>{{this.vnum}}</p>
+        </div>
+        <div class="col-md-2 col-sm12">
+            <h5>Seats:</h5>
+            <p>{{this.seats}}</p>
+        </div>
+        <div class="col-md-2 col-sm12">
+            <h5>Price (/km):</h5>
+            <p>{{this.price}}</p>
+        </div>
+        <div class="col-md-2 col-sm12">
+            <h5>Year:</h5>
+            <p>{{this.year}}</p>
+        </div>
+        <div class="col-md-2 col-12">
+            <a href="/carDetails/{{this._id}}"><b>Rent Now</b></a>
+        </div>        
+    </div>
+    {{/each}}
+{{/if}}
+
+
