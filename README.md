@@ -8,5 +8,5 @@ Steps:
 5. Run the server on localhost:5000
 
 Admin Login:
-Username - admin
+Username - admin , 
 Password - admin@123
